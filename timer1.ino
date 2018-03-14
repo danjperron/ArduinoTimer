@@ -101,7 +101,7 @@ int8_t setAlarme(int alarmeIndex, alarme_struct * nouvelleAlarme)
 
 void lireAlarmeEErom(void)
 {
-   int8_t loop;
+   int loop;
    uint8_t * pointeur= (int8_t *) &mesAlarmes[0];
    
    for(loop=0;loop< NB_ALARME_MAX * sizeof(alarme_struct);loop++)
@@ -490,7 +490,7 @@ void ajouteAlarme()
  dt.mois=wtemp;
  
   // jour
-  if(!ValideToken(tokens[2],true,false,&wtemp)) return;
+  if(!ValideToken(tokens[2],true,true,&wtemp)) return;
   dt.jour=wtemp;
 
   // jour de semaine
@@ -615,6 +615,10 @@ void afficheAlarme(uint8_t alarme)
        utemp = mesAlarmes[alarme].jour;
        if(utemp == '*')
          Serial.print("jour=*");
+       else if(utemp == 'I')
+         Serial.print("jour impair");
+       else if(utemp == 'P')
+         Serial.print("jour pair");  
        else
          Serial.print(utemp);
        Serial.print(" ");
