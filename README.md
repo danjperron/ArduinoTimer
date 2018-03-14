@@ -18,7 +18,7 @@ Pour Ajouter une alarme if faut envoyer la commande A avec les paramètres.
   ex:  A * * * 18 00 00 0 1
   correspond a une alarme de tout les jours pour 18:00:00 avec activation du relais 0
 
-  ex:  A * * * 19 00 00 0 1
+  ex:  A * * * 19 00 00 0 0
   correspond a une alarme de tout les jours pour 19:00:00 avec déactivation du relais 0
   
   ex:  A 3 14 * 6 0 0 1 1
